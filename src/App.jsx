@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import TicTacToe from "./Components/TicTacToe";
 
 function App() {
   return (
     <>
-      <h1 className="text-black">Tic Tac Toe</h1>
+      <TicTacToe />
     </>
   );
 }
