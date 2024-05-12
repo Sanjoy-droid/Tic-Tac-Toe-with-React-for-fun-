@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 
-const TicTacToe = () => {
+const SpecialTicTac = () => {
   const winArray = [
     [0, 1, 2],
     [0, 3, 6],
@@ -20,6 +19,17 @@ const TicTacToe = () => {
 
   const newGameButtonRef = useRef(null);
 
+  // queue declaration
+  const [queue, setQueue] = useState([]);
+  const [num, setNum] = useState(0);
+  const limit = 6;
+
+  // Function to enqueue an item
+  const enqueue = (item) => {
+    setQueue([...queue, item]);
+  };
+
+  const [index, setIndex] = useState(0);
   // Winner Check
 
   const checkWinner = () => {
@@ -46,19 +56,23 @@ const TicTacToe = () => {
       setTurnO(!turnO);
       setMoves(moves + 1);
 
-      checkWinner();
+      // implementing queue funtionality
+      let itemId = e.target.id[7];
+      let removeItemId = "button-";
+      enqueue(itemId);
 
-      if (!winner && moves === 8) {
-        // All moves made and no winner
-        handleDraw();
+      if (queue.length > limit - 1) {
+        // discard first element in queue
+        removeItemId = removeItemId + String(queue[num]);
+        setNum(num + 1);
+
+        const removeButton = document.getElementById(removeItemId);
+        removeButton.innerText = "";
+        removeButton.disabled = false;
       }
-    }
-  };
 
-  //   Draw Handling
-  const handleDraw = () => {
-    setWinner("Draw");
-    setDisableButtons(true);
+      checkWinner();
+    }
   };
 
   //   New Game
@@ -76,26 +90,20 @@ const TicTacToe = () => {
 
   // Clear Board
   const ClearBoard = () => {
+    setQueue([]);
+    setNum(0);
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
       button.innerText = "";
       button.disabled = false;
     });
   };
-
   return (
     <>
-      <div className="bg-gray-700 h-[100vh]">
-        <div className="flex space-x-12">
-          <p className="h-20 w-80 ml-[22rem] text-3xl text-yellow-100 text-center py-8">
-            Tic Tac Toe
-          </p>
-          <Link to="/special-tic-tac-toe">
-            <div className="mr-10 mt-6 h-14 w-48 text-white bg-blue-500 rounded-md flex justify-center items-center">
-              Play Special Tic Tac Toe
-            </div>
-          </Link>
-        </div>
+      <div className="bg-gray-500 h-[100vh]">
+        <p className="h-20 w-80 mx-auto text-3xl text-yellow-100 text-center py-8">
+          Welcome to Tic Tac Toe
+        </p>
         <div className="row mt-2 " onClick={handleButtonClick}>
           {/* First Row */}
           <div className="column  flex justify-center items-center   pt-10 space-x-1">
@@ -157,7 +165,7 @@ const TicTacToe = () => {
         {winner !== null && (
           <div className="h-20 w-64 bg-amber-500 flex justify-center items-center text-4xl rounded-xl mt-8 mx-auto">
             <div className="winner flex justify-center items-center text-center ">
-              {winner === "Draw" ? "Draw" : "Winner: " + winner}
+              {"Winner: " + winner}
             </div>
           </div>
         )}
@@ -179,4 +187,4 @@ const TicTacToe = () => {
   );
 };
 
-export default TicTacToe;
+export default SpecialTicTac;
