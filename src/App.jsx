@@ -10,13 +10,8 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route exact path="/" element={<TicTacToe />} />
-          <Route
-            exact
-            path="/special-tic-tac-toe"
-            element={<SpecialTicTac />}
-          />
-          {/* <MyComponent /> */}
+          <Route exact path="/" element={<SpecialTicTac />} />
+          <Route exact path="/tic-tac-toe" element={<TicTacToe />} />
         </Routes>
       </Router>
     </>

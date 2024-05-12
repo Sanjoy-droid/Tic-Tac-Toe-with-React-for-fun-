@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 
 const TicTacToe = () => {
   const winArray = [
@@ -86,32 +85,26 @@ const TicTacToe = () => {
   return (
     <>
       <div className="bg-gray-700 h-[100vh]">
-        <div className="flex space-x-12">
-          <p className="h-20 w-80 ml-[22rem] text-3xl text-yellow-100 text-center py-8">
-            Tic Tac Toe
-          </p>
-          <Link to="/special-tic-tac-toe">
-            <div className="mr-10 mt-6 h-14 w-48 text-white bg-blue-500 rounded-md flex justify-center items-center">
-              Play Special Tic Tac Toe
-            </div>
-          </Link>
-        </div>
+        <p className="h-20 w-80 ml-[22rem] text-3xl text-yellow-100 text-center py-8">
+          Tic Tac Toe
+        </p>
+
         <div className="row mt-2 " onClick={handleButtonClick}>
           {/* First Row */}
           <div className="column  flex justify-center items-center   pt-10 space-x-1">
             <button
               id="button-0"
-              className="w-20 h-20 bg-purple-400 border-2 border-black rounded-xl"
+              className="w-20 h-20 bg-indigo-600 border-2 border-black rounded-xl "
               disabled={disableButtons}
             ></button>
             <button
               id="button-1"
-              className="w-20 h-20 bg-purple-400 border-2 border-black rounded-xl"
+              className="w-20 h-20 bg-indigo-600 border-2 border-black rounded-xl"
               disabled={disableButtons}
             ></button>
             <button
               id="button-2"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>
@@ -119,17 +112,17 @@ const TicTacToe = () => {
           <div className=" flex justify-center items-center space-x-1 mt-1  ">
             <button
               id="button-3"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-4"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-5"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>
@@ -137,17 +130,17 @@ const TicTacToe = () => {
           <div className=" flex justify-center items-center space-x-1 mt-1">
             <button
               id="button-6"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-7"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-8"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-indigo-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>

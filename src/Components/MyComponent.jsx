@@ -11,7 +11,6 @@ const MyComponent = () => {
     setQueue([...queue, item]);
   };
 
-  // Example usage
   const [index, setIndex] = useState(0);
 
   const handleEnqueue = () => {

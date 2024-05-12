@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const SpecialTicTac = () => {
   const winArray = [
@@ -100,26 +101,33 @@ const SpecialTicTac = () => {
   };
   return (
     <>
-      <div className="bg-gray-500 h-[100vh]">
-        <p className="h-20 w-80 mx-auto text-3xl text-yellow-100 text-center py-8">
-          Welcome to Tic Tac Toe
-        </p>
+      <div className="bg-gray-700 h-[150vh]">
+        <div className="flex justify-center items-center space-x-28">
+          <p className=" h-20 w-60 ml-96  text-3xl text-yellow-100  py-8">
+            !Draw Tic Tac Toe
+          </p>
+          <Link to="/tic-tac-toe">
+            <div className="mr-10 mt-6 h-14 w-48 text-white bg-indigo-600 hover:bg-indigo-500 rounded-md flex justify-center items-center">
+              Play Normal Tic Tac Toe
+            </div>
+          </Link>
+        </div>
         <div className="row mt-2 " onClick={handleButtonClick}>
           {/* First Row */}
           <div className="column  flex justify-center items-center   pt-10 space-x-1">
             <button
               id="button-0"
-              className="w-20 h-20 bg-purple-400 border-2 border-black rounded-xl"
+              className="w-20 h-20 bg-blue-600 border-2 border-black rounded-xl"
               disabled={disableButtons}
             ></button>
             <button
               id="button-1"
-              className="w-20 h-20 bg-purple-400 border-2 border-black rounded-xl"
+              className="w-20 h-20 bg-blue-600 border-2 border-black rounded-xl"
               disabled={disableButtons}
             ></button>
             <button
               id="button-2"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>
@@ -127,17 +135,17 @@ const SpecialTicTac = () => {
           <div className=" flex justify-center items-center space-x-1 mt-1  ">
             <button
               id="button-3"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-4"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-5"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>
@@ -145,17 +153,17 @@ const SpecialTicTac = () => {
           <div className=" flex justify-center items-center space-x-1 mt-1">
             <button
               id="button-6"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-7"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
             <button
               id="button-8"
-              className="w-20 h-20 bg-purple-400 rounded-xl border-2 border-black"
+              className="w-20 h-20 bg-blue-600 rounded-xl border-2 border-black"
               disabled={disableButtons}
             ></button>
           </div>
@@ -181,6 +189,21 @@ const SpecialTicTac = () => {
           >
             New Game
           </button>
+        </div>
+        {/* Special Rules  */}
+        <div className="flex  items-center ml-60 mt-16 space-x-10">
+          <div>
+            <p className="h-14  mx-auto text-3xl text-white  py-8">Rules</p>
+          </div>
+          <div className="w-96 h-52 rounded-lg bg-lime-500 p-4 font-medium">
+            <p>
+              If a player makes more than 3 moves, their oldest moves will be
+              automatically discarded. This ensures that there are always 3 or
+              fewer symbols of each player on the board. All the other rule is
+              Same for Normal Tic Tac Toe. Applying this rule to this game
+              ensures that it will never result in a Draw!!!
+            </p>
+          </div>
         </div>
       </div>
     </>
