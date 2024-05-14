@@ -25,7 +25,7 @@ A simple web-based Tic Tac Toe game implemented using React with Tailwind CSS an
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/tic-tac-toe.git
+   git clone git@github.com:Sanjoy-droid/Tic-Tac-Toe-with-React-for-fun-.git
 
    ```
 
